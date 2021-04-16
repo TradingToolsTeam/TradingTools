@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using Microsoft.Extensions.Options;
@@ -51,7 +52,7 @@ namespace TradingTools.DataLoadService.Services
                 yield return GetStockDataFiles(ticker, slice);
 
                 //TODO: Se esparan 15 segundos por la limitación del API de AlphaVantage, cambiar esto por una comprobación de la respuesta y una añadir una espera solo si falla
-                Thread.Sleep(15_000);
+                Thread.Sleep(TimeSpan.FromSeconds(15));
             }
         }
 
