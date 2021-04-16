@@ -35,7 +35,7 @@ namespace TradingTools.DataLoadService.Services
             {
                 _influxdbService.InsertData(ticker, filePath);
 
-                _logger.LogInformation($"Se han insertado en InfluxDB los datos del fichero {filePath} para el ticker {ticker}");
+                _logger.LogInformation("Se han insertado en InfluxDB los datos del fichero {filePath} para el ticker {ticker}", filePath, ticker);
             }
         }
     }
